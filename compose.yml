@@ -1,0 +1,24 @@
+services:
+ fresh-app:
+  container_name: app
+  build:
+   context: .
+   dockerfile: Dockerfile
+  ports:
+   - "8000:8000"
+  environment:
+   - DENO_DEPLOYMENT_ID=development
+  develop:
+   watch:
+   - path: ./app
+     action: sync+restart
+     target: /app/app
+     ignore:
+      - node_modules/
+   - path; ./static
+     action: sync
+     target: /app/static
+   - path: ./deno.json
+     action: rebuild
+   - path: ./Dockerfile
+     action: rebuild

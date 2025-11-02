@@ -1,0 +1,44 @@
+{
+	"nodeModulesDir": "auto",
+	"tasks": {
+		"check": "deno fmt --check . && deno lint .",
+		"dev": "nuxt dev",
+		"build": "nuxt build",
+		"start": "node .output/server/index.mjs",
+		"preview":  "node preview",
+		"generate": "nuxt generate",
+		"lint": "deno lint",
+		"lint:fix": "deno lint --fix",
+		"fmt": "deno fmt --check",
+		"fmt:fix": "deno fmt"
+	},
+	"lint": {
+		"rules": {
+			"tags": [
+				"recommended"
+			]
+		}
+	},
+	"exclude": [
+		"**/node_modules/*",
+		"**/.nuxt/*",
+		"**/.output/*",
+		"**/dist/*",
+	],
+	"imports": {
+		"nuxt": "npm:nuxt@^3.13.0",
+		"vue": "npm:vue@^3.4.0",
+		"@nuxt/devtools": "npm:@nuxt/devtools@latest"
+	},
+	"compilerOptions": {
+		"lib": [
+			"dom",
+			"dom.asynciterable",
+			"dom.iterable",
+			"deno.ns"
+		],
+		"types": [
+			"vite/client"
+		]
+	}
+}

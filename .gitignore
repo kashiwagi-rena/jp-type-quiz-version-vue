@@ -1,2 +1,10 @@
-/node_modules
+.deno/
+node_modules/
 
+.nuxt/
+.output/
+dist/
+
+.nitro/
+
+.DS_Store

@@ -15,7 +15,7 @@ services:
      target: /app/app
      ignore:
       - node_modules/
-   - path; ./static
+   - path: ./static
      action: sync
      target: /app/static
    - path: ./deno.json
